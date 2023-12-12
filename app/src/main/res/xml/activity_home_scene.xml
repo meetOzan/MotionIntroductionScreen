@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/tools">
+
+    <Transition
+        app:constraintSetEnd="@id/check"
+        app:constraintSetStart="@+id/start"
+        app:duration="2000">
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="30"
+                app:motionTarget="@+id/imageCheck" />
+            <KeyPosition
+                app:framePosition="30"
+                app:motionTarget="@+id/imageCheck" />
+        </KeyFrameSet>
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="30"
+                app:motionTarget="@+id/textViewCheck" />
+            <KeyPosition
+                app:framePosition="30"
+                app:motionTarget="@+id/textViewCheck" />
+        </KeyFrameSet>
+        <OnClick app:targetId="@+id/buttonContinue" />
+    </Transition>
+
+    <Transition
+        app:constraintSetEnd="@id/delete"
+        app:constraintSetStart="@+id/check"
+        app:duration="2000">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="30"
+                app:motionTarget="@+id/textCheck" />
+            <KeyPosition
+                app:framePosition="30"
+                app:motionTarget="@+id/textCheck" />
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="30"
+                app:motionTarget="@+id/buttonContinue" />
+            <KeyPosition
+                app:framePosition="30"
+                app:motionTarget="@+id/buttonContinue" />
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="30"
+                app:motionTarget="@+id/textViewDelete" />
+            <KeyPosition
+                app:framePosition="30"
+                app:motionTarget="@+id/textViewDelete" />
+        </KeyFrameSet>
+
+        <OnClick app:targetId="@+id/textCheck" />
+    </Transition>
+
+
+    <Transition
+        app:constraintSetEnd="@id/refresh"
+        app:constraintSetStart="@+id/delete"
+        app:duration="2000">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="30"
+                app:motionTarget="@+id/textDelete" />
+            <KeyPosition
+                app:framePosition="30"
+                app:motionTarget="@+id/textDelete" />
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="30"
+                app:motionTarget="@+id/textViewRefresh" />
+            <KeyPosition
+                app:framePosition="30"
+                app:motionTarget="@+id/textViewRefresh" />
+        </KeyFrameSet>
+        <OnClick app:targetId="@id/textDelete" />
+    </Transition>
+
+    <Transition
+        app:constraintSetEnd="@id/fab"
+        app:constraintSetStart="@+id/refresh"
+        app:duration="2000">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="60"
+                app:motionTarget="@+id/textRefresh" />
+            <KeyPosition
+                app:framePosition="60"
+                app:motionTarget="@+id/textRefresh" />
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="60"
+                app:motionTarget="@+id/fab" />
+            <KeyPosition
+                app:framePosition="30"
+                app:motionTarget="@+id/fab" />
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="60"
+                app:motionTarget="@+id/imageViewArrow" />
+            <KeyPosition
+                app:framePosition="30"
+                app:motionTarget="@+id/imageViewArrow" />
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="60"
+                app:motionTarget="@+id/textViewWelcome" />
+            <KeyPosition
+                app:framePosition="30"
+                app:motionTarget="@+id/textViewWelcome" />
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="60"
+                app:motionTarget="@+id/textViewNoNotes" />
+            <KeyPosition
+                app:framePosition="30"
+                app:motionTarget="@+id/textViewNoNotes" />
+        </KeyFrameSet>
+        <OnClick app:targetId="@id/textRefresh" />
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/check">
+
+        <Constraint
+            android:id="@+id/buttonContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:alpha="0"
+            android:backgroundTint="#018286"
+            android:paddingHorizontal="48dp"
+            android:text="@string/next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewWelcome" />
+
+        <Constraint
+            android:id="@+id/imageCheck"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:alpha="1"
+            app:layout_constraintEnd_toStartOf="@+id/imageDelete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:srcCompat="@drawable/ic_check_circle"
+            app:tint="#00245A" />
+
+        <Constraint
+            android:id="@+id/textCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:alpha="1"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/textViewCheck"
+            app:layout_constraintStart_toStartOf="@+id/textViewCheck"
+            app:layout_constraintTop_toBottomOf="@id/textViewCheck" />
+
+        <Constraint
+            android:id="@+id/textViewCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:alpha="1"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/select"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/imageCheck"
+            app:layout_constraintStart_toStartOf="@id/imageCheck"
+            app:layout_constraintTop_toBottomOf="@id/imageCheck" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/delete">
+        <Constraint
+            android:id="@+id/imageDelete"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:alpha="1"
+            app:layout_constraintEnd_toStartOf="@id/imageRefresh"
+            app:layout_constraintStart_toEndOf="@+id/imageCheck"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:srcCompat="@drawable/ic_delete_forever"
+            app:tint="#00245A" />
+
+        <Constraint
+            android:id="@+id/buttonContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:alpha="0"
+            android:backgroundTint="#018286"
+            android:paddingHorizontal="48dp"
+            android:text="@string/next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewWelcome" />
+
+        <Constraint
+            android:id="@+id/textViewDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:alpha="1"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/delete"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/imageDelete"
+            app:layout_constraintStart_toStartOf="@id/imageDelete"
+            app:layout_constraintTop_toBottomOf="@id/imageDelete" />
+
+        <Constraint
+            android:id="@+id/buttonContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:alpha="0"
+            android:backgroundTint="#018286"
+            android:paddingHorizontal="48dp"
+            android:text="@string/next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewWelcome" />
+
+        <Constraint
+            android:id="@+id/imageCheck"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:alpha="1"
+            app:layout_constraintEnd_toStartOf="@+id/imageDelete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:srcCompat="@drawable/ic_check_circle"
+            app:tint="#00245A" />
+
+        <Constraint
+            android:id="@+id/textViewCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:alpha="1"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/select"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/imageCheck"
+            app:layout_constraintStart_toStartOf="@id/imageCheck"
+            app:layout_constraintTop_toBottomOf="@id/imageCheck" />
+
+        <Constraint
+            android:id="@+id/textDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:alpha="1"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/textViewDelete"
+            app:layout_constraintStart_toStartOf="@+id/textViewDelete"
+            app:layout_constraintTop_toBottomOf="@id/textViewDelete" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/refresh">
+
+        <Constraint
+            android:id="@+id/imageDelete"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:alpha="1"
+            app:layout_constraintEnd_toStartOf="@id/imageRefresh"
+            app:layout_constraintStart_toEndOf="@+id/imageCheck"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:srcCompat="@drawable/ic_delete_forever"
+            app:tint="#00245A" />
+
+        <Constraint
+            android:id="@+id/buttonContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:alpha="0"
+            android:backgroundTint="#018286"
+            android:paddingHorizontal="48dp"
+            android:text="@string/next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewWelcome" />
+
+        <Constraint
+            android:id="@+id/textViewDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:alpha="1"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/delete"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/imageDelete"
+            app:layout_constraintStart_toStartOf="@id/imageDelete"
+            app:layout_constraintTop_toBottomOf="@id/imageDelete" />
+
+        <Constraint
+            android:id="@+id/imageCheck"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:alpha="1"
+            app:layout_constraintEnd_toStartOf="@+id/imageDelete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:srcCompat="@drawable/ic_check_circle"
+            app:tint="#00245A" />
+
+        <Constraint
+            android:id="@+id/textViewCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:alpha="1"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/select"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/imageCheck"
+            app:layout_constraintStart_toStartOf="@id/imageCheck"
+            app:layout_constraintTop_toBottomOf="@id/imageCheck" />
+
+        <Constraint
+            android:id="@+id/textRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:alpha="1"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/textViewRefresh"
+            app:layout_constraintStart_toStartOf="@+id/textViewRefresh"
+            app:layout_constraintTop_toBottomOf="@id/textViewRefresh" />
+
+        <Constraint
+            android:id="@+id/imageRefresh"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:alpha="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageDelete"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:srcCompat="@drawable/ic_refresh"
+            app:tint="#00245A" />
+
+        <Constraint
+            android:id="@+id/textViewRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:alpha="1"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/refresh"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/imageRefresh"
+            app:layout_constraintStart_toStartOf="@id/imageRefresh"
+            app:layout_constraintTop_toBottomOf="@id/imageRefresh" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/fab">
+
+        <Constraint
+            android:id="@+id/imageDelete"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:alpha="1"
+            app:layout_constraintEnd_toStartOf="@id/imageRefresh"
+            app:layout_constraintStart_toEndOf="@+id/imageCheck"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:srcCompat="@drawable/ic_delete_forever"
+            app:tint="#00245A" />
+
+        <Constraint
+            android:id="@+id/buttonContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:alpha="0"
+            android:backgroundTint="#018286"
+            android:paddingHorizontal="48dp"
+            android:text="@string/next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewWelcome" />
+
+        <Constraint
+            android:id="@+id/textViewDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:alpha="1"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/delete"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/imageDelete"
+            app:layout_constraintStart_toStartOf="@id/imageDelete"
+            app:layout_constraintTop_toBottomOf="@id/imageDelete" />
+
+        <Constraint
+            android:id="@+id/imageCheck"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:alpha="1"
+            app:layout_constraintEnd_toStartOf="@+id/imageDelete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:srcCompat="@drawable/ic_check_circle"
+            app:tint="#00245A" />
+
+        <Constraint
+            android:id="@+id/textViewCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:alpha="1"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/select"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/imageCheck"
+            app:layout_constraintStart_toStartOf="@id/imageCheck"
+            app:layout_constraintTop_toBottomOf="@id/imageCheck" />
+
+        <Constraint
+            android:id="@+id/imageRefresh"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:alpha="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageDelete"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:srcCompat="@drawable/ic_refresh"
+            app:tint="#00245A" />
+
+        <Constraint
+            android:id="@+id/textViewRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:alpha="1"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/refresh"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/imageRefresh"
+            app:layout_constraintStart_toStartOf="@id/imageRefresh"
+            app:layout_constraintTop_toBottomOf="@id/imageRefresh" />
+
+        <Constraint
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:alpha="1"
+            android:backgroundTint="#96EDF8"
+            android:elevation="10dp"
+            android:src="@drawable/ic_add"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent" />
+
+        <Constraint
+            android:id="@+id/imageViewArrow"
+            android:layout_width="56dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="26dp"
+            android:alpha="1"
+            android:src="@drawable/ic_arrow"
+            motion:layout_constraintBottom_toBottomOf="@id/fab"
+            motion:layout_constraintEnd_toStartOf="@id/fab"
+            motion:layout_constraintStart_toEndOf="@id/buttonContinue"
+            motion:layout_constraintTop_toTopOf="@id/fab"
+            motion:tint="@color/white" />
+
+        <Constraint
+            android:id="@+id/blackBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:background="#CB000000"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/textViewWelcome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="56dp"
+            android:alpha="0"
+            android:fontFamily="@font/open_sans"
+            android:text="Welcome to the Note App"
+            android:textColor="#D5D5D5"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            motion:layout_constraintBottom_toTopOf="@id/fab"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/textViewNotes"
+            motion:layout_constraintVertical_bias="0.3" />
+
+        <Constraint
+            android:id="@+id/textViewNoNotes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/fab"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewNotes" />/>
+
+        <Constraint
+            android:id="@+id/textArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:alpha="1"
+            android:text="@string/enter_your_first_note"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            motion:layout_constraintBottom_toBottomOf="@id/imageViewArrow"
+            motion:layout_constraintEnd_toStartOf="@id/imageViewArrow"
+            motion:layout_constraintTop_toTopOf="@id/imageViewArrow" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end"></ConstraintSet>
+
+</MotionScene>

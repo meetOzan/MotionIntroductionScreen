@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="3000">
+        <KeyFrameSet>
+            <KeyPosition
+                app:framePosition="20"
+                app:motionTarget="@+id/circle_background_top" />
+            <KeyPosition
+                app:framePosition="20"
+                app:motionTarget="@+id/circle_background_bottom" />
+        </KeyFrameSet>
+        <OnClick app:targetId="@+id/buttonLogin" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start"></ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/emailInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="72dp"
+            android:layout_marginTop="36dp"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewWelcome" />
+        <Constraint
+            android:id="@+id/passwordInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="36dp"
+            android:layout_marginTop="32dp"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailInputLayout" />
+
+        <Constraint
+            android:id="@+id/circle_background_bottom"
+            android:layout_width="0dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="-110dp"
+            android:background="@drawable/bg_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+        <Constraint
+            android:id="@+id/circle_background_top"
+            android:layout_width="0dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/bg_circle"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/progress_circular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:alpha="1"
+            android:progressBackgroundTint="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/circle_background_bottom"
+            app:layout_constraintStart_toStartOf="@id/circle_background_bottom"
+            app:layout_constraintTop_toTopOf="@id/circle_background_bottom" />
+    </ConstraintSet>
+</MotionScene>

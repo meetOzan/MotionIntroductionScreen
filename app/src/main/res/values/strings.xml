@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MotionLoginScreen</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="welcome_to_best_app">Welcome to Best App</string>
+    <string name="no_notes_taken_click_to_take_a_new_note">No notes taken, click \'+\' to take a new note</string>
+    <string name="notes">Notes</string>
+    <string name="refresh">Refresh</string>
+    <string name="delete">Delete</string>
+    <string name="select">Select</string>
+    <string name="next">Next</string>
+    <string name="enter_your_first_note">Enter Your First Note</string>
+</resources>

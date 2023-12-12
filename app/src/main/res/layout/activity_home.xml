@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_home_scene"
+    tools:context=".HomeActivity">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#96EDF8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/blackBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CB000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:alpha="0"
+        android:backgroundTint="#96EDF8"
+        android:elevation="10dp"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageCheck"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0"
+        app:layout_constraintEnd_toStartOf="@+id/imageDelete"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/ic_check_circle"
+        app:tint="#00245A" />
+
+    <TextView
+        android:id="@+id/textViewCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:alpha="0"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/select"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/imageCheck"
+        app:layout_constraintStart_toStartOf="@id/imageCheck"
+        app:layout_constraintTop_toBottomOf="@id/imageCheck" />
+
+    <ImageView
+        android:id="@+id/imageDelete"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0"
+        app:layout_constraintEnd_toStartOf="@id/imageRefresh"
+        app:layout_constraintStart_toEndOf="@+id/imageCheck"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/ic_delete_forever"
+        app:tint="#00245A" />
+
+    <TextView
+        android:id="@+id/textViewDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:alpha="0"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/delete"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/imageDelete"
+        app:layout_constraintStart_toStartOf="@id/imageDelete"
+        app:layout_constraintTop_toBottomOf="@id/imageDelete" />
+
+    <ImageView
+        android:id="@+id/imageRefresh"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageDelete"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:srcCompat="@drawable/ic_refresh"
+        app:tint="#00245A" />
+
+    <TextView
+        android:id="@+id/textViewRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:alpha="0"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/refresh"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/imageRefresh"
+        app:layout_constraintStart_toStartOf="@id/imageRefresh"
+        app:layout_constraintTop_toBottomOf="@id/imageRefresh" />
+
+
+    <TextView
+        android:id="@+id/textViewNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:alpha="0"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/notes"
+        android:textColor="#63877A"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewCheck" />
+
+    <TextView
+        android:id="@+id/textViewNoNotes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="56dp"
+        android:alpha="0"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/no_notes_taken_click_to_take_a_new_note"
+        android:textColor="#8D4A4A4A"
+        android:textSize="30sp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/fab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewNotes" />
+
+    <TextView
+        android:id="@+id/textViewWelcome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="56dp"
+        android:fontFamily="@font/open_sans"
+        android:text="Welcome to the Note App"
+        android:textColor="#D5D5D5"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/fab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewNotes"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <ImageView
+        android:id="@+id/imageViewArrow"
+        android:layout_width="56dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="26dp"
+        android:alpha="0"
+        android:src="@drawable/ic_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/fab"
+        app:layout_constraintEnd_toStartOf="@id/fab"
+        app:layout_constraintStart_toEndOf="@id/buttonContinue"
+        app:layout_constraintTop_toTopOf="@id/fab"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/textArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:alpha="0"
+        android:text="@string/enter_your_first_note"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewArrow"
+        app:layout_constraintEnd_toStartOf="@id/imageViewArrow"
+        app:layout_constraintTop_toTopOf="@id/imageViewArrow" />
+
+    <Button
+        android:id="@+id/buttonContinue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:alpha="0.6"
+        android:backgroundTint="#018286"
+        android:paddingHorizontal="48dp"
+        android:text="@string/next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewWelcome" />
+
+    <TextView
+        android:id="@+id/textCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:alpha="0"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewCheck"
+        app:layout_constraintStart_toStartOf="@+id/textViewCheck"
+        app:layout_constraintTop_toBottomOf="@id/textViewCheck" />
+
+    <TextView
+        android:id="@+id/textDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:alpha="0"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewDelete"
+        app:layout_constraintStart_toStartOf="@+id/textViewDelete"
+        app:layout_constraintTop_toBottomOf="@id/textViewDelete" />
+
+    <TextView
+        android:id="@+id/textRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:alpha="0"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewRefresh"
+        app:layout_constraintStart_toStartOf="@+id/textViewRefresh"
+        app:layout_constraintTop_toBottomOf="@id/textViewRefresh" />
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
