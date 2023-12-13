@@ -552,29 +552,35 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="56dp"
-            android:alpha="0"
             android:fontFamily="@font/open_sans"
             android:text="Welcome to the Note App"
             android:textColor="#D5D5D5"
             android:textSize="48sp"
+            android:alpha="0"
             android:textStyle="bold"
-            motion:layout_constraintBottom_toTopOf="@id/fab"
-            motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/textViewNotes"
-            motion:layout_constraintVertical_bias="0.3" />
+            app:layout_constraintBottom_toTopOf="@id/fab"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewNotes"
+            app:layout_constraintVertical_bias="0.3"  />
 
         <Constraint
             android:id="@+id/textViewNoNotes"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="56dp"
+            android:alpha="1"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/no_notes_taken_click_to_take_a_new_note"
+            android:textColor="#8D4A4A4A"
+            android:textSize="30sp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/fab"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintTop_toBottomOf="@id/textViewNotes" />/>
+            app:layout_constraintTop_toBottomOf="@id/textViewNotes" />
 
         <Constraint
             android:id="@+id/textArrow"
